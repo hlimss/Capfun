@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Teams · Espace Saisonnier — Le Paradis de Bazas</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ── Team cards ── */
+  .team{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+  .team-top{padding:26px 28px 22px;color:#fff;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+  .team-top::after{content:"";position:absolute;right:-28px;top:-28px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.10);pointer-events:none}
+  .team-top .em{font-size:2.4rem;line-height:1;flex:none;position:relative;z-index:1}
+  .team-top h3{color:#fff;font-size:1.4rem;position:relative;z-index:1;margin:0}
+  .team-body{padding:22px 28px 26px;display:flex;flex-direction:column;flex:1;gap:16px}
+  .team-body p{color:var(--ink-soft);margin:0;flex:1}
+  .team-members{display:flex;flex-direction:column;gap:0;margin-top:auto}
+  .member{display:flex;align-items:center;gap:14px;padding:11px 0;border-top:1px dashed var(--line)}
+  .member:first-of-type{border-top:none}
+  .member .av{width:56px;height:56px;border-radius:50%;flex:none;overflow:hidden;
+    display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-weight:700;font-size:1.1rem;
+    box-shadow:0 4px 12px rgba(36,26,77,.18)}
+  .member .av img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .member-info strong{display:block;font-family:var(--font-display);font-size:1rem;line-height:1.2}
+  .member-info span{font-size:.85rem;color:var(--ink-soft);font-weight:600}
+  /* "Et toi" card */
+  .team-you{background:linear-gradient(150deg,#ffc62e,#ff7a2f);border:none}
+  .team-you .team-top{background:transparent}
+  .team-you .team-top h3{color:var(--purple-ink)}
+  .team-you .team-body p{color:var(--purple-ink);font-weight:700}
+
+  /* ── Mascots section ── */
+  .mascots-band{background:#fff;border-top:1px solid var(--line)}
+  .mascots-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+  @media(max-width:760px){.mascots-grid{grid-template-columns:1fr}}
+  .mascots-img-frame{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);
+    background:linear-gradient(145deg,#fff9f5,#fff0e6);border:3px solid rgba(255,107,26,.10);padding:18px}
+  .mascots-img-frame img{width:100%;border-radius:calc(var(--r-xl) - 10px)}
+  .mascots-pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 0 28px}
+  .mascot-pill{display:flex;align-items:center;gap:8px;background:var(--cream);border-radius:999px;
+    padding:7px 14px;font-weight:700;font-size:.88rem;border:1px solid var(--line)}
+  .mascot-pill span.dot{width:9px;height:9px;border-radius:50%;flex:none}
+
+  /* ── Avantages preview ── */
+  .avantages-preview-band{background:var(--cream)}
+  .avantage-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
+  @media(max-width:760px){.avantage-row{grid-template-columns:1fr}}
+  .av-card{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:#fff;
+    border:1px solid var(--line);transition:transform .2s ease,box-shadow .2s ease}
+  .av-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .av-card img{width:100%;height:180px;object-fit:cover;display:block}
+  .av-card-body{padding:18px 20px 20px}
+  .av-badge{display:inline-flex;align-items:center;border-radius:999px;padding:.38em .9em;
+    font-family:var(--font-display);font-weight:600;font-size:.8rem;margin-bottom:10px}
+  .av-card h4{font-family:var(--font-display);font-size:1.1rem;margin-bottom:6px}
+  .av-card p{font-size:.88rem;color:var(--ink-soft);margin:0;line-height:1.55}
+</style>
+</head>
+<body data-screen-label="Les Teams">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo-paradis.png" alt="Capfun · Le Paradis de Bazas"></a>
+    <div class="nav-links" id="navlinks">
+      <a href="index.html">Accueil</a>
+      <a href="avant-arrivee.html">Avant ton arrivée</a>
+      <a href="le-groupe.html">Le Groupe</a>
+      <a href="le-camping.html">Le Camping</a>
+      <a href="farfarolle.html">Farfarolle</a>
+      <a href="avantages.html">Mes Avantages</a>
+      <a href="les-teams.html" class="active">Les Teams</a>
+      <a href="code-rouge.html">Code Rouge</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html" class="btn btn-outline">← Accueil</a>
+      <button class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head bg-magenta">
+  <div class="hero-grain"></div>
+  <div class="wrap">
+    <span class="eyebrow">Rubrique 07 · L'équipe</span>
+    <h1 style="margin-top:14px">Les Teams 🤝</h1>
+    <p class="lead" style="margin-top:16px">Une grande famille, plusieurs talents&nbsp;! Un camping de folie ne tourne pas tout seul. Derrière chaque sourire de client, il y a une équipe soudée. Découvre les pôles que tu vas intégrer ou côtoyer.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" style="position:absolute;bottom:-1px;left:0"><path fill="#fbf6ef" d="M0,32L120,37.3C240,43,480,53,720,53.3C960,53,1200,43,1320,37.3L1440,32L1440,90L0,90Z"></path></svg>
+</header>
+
+<main>
+  <!-- ═══ GRILLE ÉQUIPES ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="center" style="margin-bottom:clamp(36px,5vw,56px)">
+        <span class="eyebrow" style="display:inline-flex">Les équipes du camping</span>
+        <h2 style="margin-top:12px">Chaque pôle, une mission</h2>
+        <p class="lead" style="max-width:56ch;margin:12px auto 0">Quel que soit ton poste, tu fais partie de quelque chose de grand. Voici qui tu vas rencontrer tout l'été&nbsp;!</p>
+      </div>
+
+      <div class="grid g-3 reveal">
+
+        <!-- Direction -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#7b3ff0,#3a169c)">
+            <span class="em">🎯</span><h3>Team Direction</h3>
+          </div>
+          <div class="team-body">
+            <p>Piloter le camping d'une main de maître, veiller au bonheur des vacanciers, et surtout chouchouter l'équipe de saisonniers&nbsp;! Là pour te guider, te motiver et veiller à ta saison.</p>
+            <div class="team-members">
+              <div class="member"><div class="av" style="background:var(--purple)"><img src="assets/team-chris.png" alt="Chris"></div><div class="member-info"><strong>Chris</strong><span>Directeur opérationnel</span></div></div>
+              <div class="member"><div class="av" style="background:var(--magenta)">M</div><div class="member-info"><strong>Mariam</strong><span>Assistante de direction</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Animation -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#ff7a2f,#ec3b46)">
+            <span class="em">🎉</span><h3>Team Animation</h3>
+          </div>
+          <div class="team-body">
+            <p>Mettre le feu au camping, créer des souvenirs inoubliables pour les petits et les grands, et faire danser tout le monde jusqu'au bout de la nuit.</p>
+            <div class="team-members">
+              <div class="member"><div class="av" style="background:var(--orange)"><img src="assets/team-julien.png" alt="Julien"></div><div class="member-info"><strong>Julien</strong><span>Responsable animation</span></div></div>
+              <div class="member"><div class="av" style="background:var(--purple)"><img src="assets/team-jeanluc.png" alt="Jean Luc"></div><div class="member-info"><strong>Jean Luc</strong><span>Animateur</span></div></div>
+              <div class="member"><div class="av" style="background:var(--coral)"><img src="assets/team-basma.png" alt="Basma"></div><div class="member-info"><strong>Basma</strong><span>Community manager</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Réception -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#23b1e6,#1376c4)">
+            <span class="em">🛎️</span><h3>Team Réception</h3>
+          </div>
+          <div class="team-body">
+            <p>Être le premier et le dernier visage que les clients voient. Orienter, conseiller, et gérer les arrivées et départs d'une main de maître.</p>
+            <div class="team-members">
+              <div class="member"><div class="av" style="background:var(--cyan)"><img src="assets/team-gwen.png" alt="Gwen"></div><div class="member-info"><strong>Gwen</strong><span>Réceptionniste</span></div></div>
+              <div class="member"><div class="av" style="background:var(--blue)"><img src="assets/team-remi.png" alt="Rémi"></div><div class="member-info"><strong>Rémi</strong><span>Réceptionniste</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ménage -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#34b24a,#1f8a3a)">
+            <span class="em">🧹</span><h3>Team Ménage</h3>
+          </div>
+          <div class="team-body">
+            <p>Garantir la propreté irréprochable des hébergements. Sans eux, le camping ne peut tout simplement pas fonctionner&nbsp;!</p>
+            <div class="team-members">
+              <div class="member"><div class="av" style="background:var(--magenta)"><img src="assets/team-roze.png" alt="Roze"></div><div class="member-info"><strong>Roze</strong><span>Équipière ménage</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Technique -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#2b7fe0,#3a169c)">
+            <span class="em">🔧</span><h3>Team Technique &amp; Espaces Verts</h3>
+          </div>
+          <div class="team-body">
+            <p>Veiller au bon fonctionnement de toutes les infrastructures (électricité, plomberie) et garder le camping magnifique et verdoyant.</p>
+            <div style="margin-top:auto;padding-top:8px">
+              <span class="chip" style="background:rgba(43,127,224,.12);border-color:transparent;color:var(--blue)">🌳 Toujours sur le terrain</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Et toi -->
+        <article class="team team-you">
+          <div class="team-top"><span class="em">🫵</span><h3>Et toi&nbsp;?</h3></div>
+          <div class="team-body">
+            <p>Quel que soit ton poste, tu participes directement à la mission Capfun&nbsp;: rendre les vacances de nos clients uniques. Bienvenue dans l'équipe&nbsp;!</p>
+            <div style="margin-top:auto"><a href="avantages.html" class="btn btn-primary">Voir mes avantages →</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MASCOTTES ═══ -->
+  <section class="section mascots-band">
+    <div class="wrap">
+      <div class="mascots-grid">
+        <div class="mascots-img-frame reveal">
+          <img src="assets/mascottes-lineup.png"
+               alt="Les 11 mascottes Capfun : Carabouille, Gaufrette, Chardon, Clapou, Plantouille, Mandragote, Amanite, Azalée, Lars, Balkos et Joe Cook"
+               loading="lazy" />
+        </div>
+        <div class="reveal">
+          <span class="eyebrow" style="display:inline-flex">Les mascottes Capfun</span>
+          <h2 style="margin-top:14px">La bande de<br><span style="color:var(--magenta)">Farfarolle&nbsp;!</span></h2>
+          <p class="lead" style="margin-top:14px">Chaque mascotte incarne un personnage unique du monde de Farfarolle. En tant qu'animateur, tu pourrais être amené à les incarner et faire briller les yeux des petits vacanciers&nbsp;!</p>
+          <div class="mascots-pills">
+            <div class="mascot-pill"><span class="dot" style="background:#E91E8C"></span>Carabouille</div>
+            <div class="mascot-pill"><span class="dot" style="background:#9C27B0"></span>Gaufrette</div>
+            <div class="mascot-pill"><span class="dot" style="background:#4CAF50"></span>Chardon</div>
+            <div class="mascot-pill"><span class="dot" style="background:#2196F3"></span>Clapou</div>
+            <div class="mascot-pill"><span class="dot" style="background:#4CAF50"></span>Plantouille</div>
+            <div class="mascot-pill"><span class="dot" style="background:#673AB7"></span>Mandragote</div>
+            <div class="mascot-pill"><span class="dot" style="background:#E91E8C"></span>Amanite</div>
+            <div class="mascot-pill"><span class="dot" style="background:#FF9800"></span>Azalée</div>
+            <div class="mascot-pill"><span class="dot" style="background:#F44336"></span>Lars</div>
+            <div class="mascot-pill"><span class="dot" style="background:#FFC62E"></span>Balkos</div>
+            <div class="mascot-pill"><span class="dot" style="background:#2196F3"></span>Joe Cook</div>
+          </div>
+          <a href="farfarolle.html" class="btn btn-primary">Découvrir le monde de Farfarolle →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ APERÇU AVANTAGES ═══ -->
+  <section class="section avantages-preview-band">
+    <div class="wrap">
+      <div class="center" style="margin-bottom:clamp(32px,4vw,50px)">
+        <span class="eyebrow" style="display:inline-flex">Tes avantages saisonniers</span>
+        <h2 style="margin-top:12px">La vie en dehors du travail</h2>
+        <p class="lead" style="max-width:50ch;margin:12px auto 0">Chez Capfun, on chouchoute nos saisonniers. Voici quelques-uns des avantages qui t'attendent cet été&nbsp;!</p>
+      </div>
+      <div class="avantage-row reveal">
+        <article class="av-card">
+          <img src="assets/avantage-piscine.png" alt="Accès gratuit à la piscine" loading="lazy">
+          <div class="av-card-body">
+            <div class="av-badge" style="background:rgba(35,177,230,.12);color:var(--cyan)">🏊 Gratuit</div>
+            <h4>Centre Aquatique</h4>
+            <p>Accès libre et illimité à la piscine et aux toboggans pendant tes jours de repos.</p>
+          </div>
+        </article>
+        <article class="av-card">
+          <img src="assets/avantage-restaurant.png" alt="-30% au restaurant" loading="lazy">
+          <div class="av-card-body">
+            <div class="av-badge" style="background:rgba(90,44,214,.12);color:var(--purple)">🍽️ −30 %</div>
+            <h4>Restaurant du Camping</h4>
+            <p>30 % de réduction sur tous les plats du restaurant tout au long de la saison.</p>
+          </div>
+        </article>
+        <article class="av-card">
+          <img src="assets/avantage-trampoline.png" alt="Réductions partenaires" loading="lazy">
+          <div class="av-card-body">
+            <div class="av-badge" style="background:rgba(52,178,74,.12);color:var(--green)">🎯 Partenaires</div>
+            <h4>Bons Plans Partenaires</h4>
+            <p>−10 % au Trampoline Park, à l'Accrobranche/Laser Game et chez Myl'Beauté.</p>
+          </div>
+        </article>
+      </div>
+      <div class="center" style="margin-top:clamp(28px,3vw,42px)">
+        <a href="avantages.html" class="btn btn-primary">Voir tous mes avantages →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ SUIVANT ============ -->
+<section class="next-nav">
+  <div class="wrap">
+    <a class="next-card reveal" href="code-rouge.html">
+      <div>
+        <span class="next-label">Page suivante</span>
+        <span class="next-title">Code Rouge</span>
+      </div>
+      <span class="next-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="brand-logo" src="assets/logo-paradis.png" alt="Capfun · Le Paradis de Bazas">
+        <p style="margin-top:14px;color:#cabbf0">285 Chemin de Migot<br>33430 Bazas · Gironde</p>
+      </div>
+      <div><h4>L'essentiel</h4><div class="stack-sm" style="display:grid">
+        <a href="avant-arrivee.html">Avant ton arrivée</a><a href="le-camping.html">Le Camping</a><a href="travailler.html">Travailler ici</a><a href="les-teams.html">Les Teams</a>
+      </div></div>
+      <div><h4>Découvrir</h4><div class="stack-sm" style="display:grid">
+        <a href="le-groupe.html">Le Groupe</a><a href="farfarolle.html">Le Monde de Farfarolle</a><a href="avantages.html">Mes Avantages</a><a href="code-rouge.html">Code Rouge</a>
+      </div></div>
+      <div><h4>En cas d'urgence</h4>
+        <div class="emergency"><span>🚨</span><div>Astreinte camping<br><span class="num">07 86 85 04 22</span></div></div>
+        <p style="margin-top:12px;font-size:.85rem">Pompiers 18 · SAMU 15 · Police 17 · Urgences 112</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Capfun · Le Paradis de Bazas — Espace Saisonnier</span><span>Cap sur le Fun ! 🚀</span></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Rouge · Espace Saisonnier — Le Paradis de Bazas</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .num-card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow-sm);border:1px solid var(--line);
+    padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .num-card .lbl{font-weight:700}
+  .num-card .num{font-family:var(--font-display);font-weight:700;font-size:1.5rem;color:var(--coral)}
+  .num-card.big{background:linear-gradient(150deg,#ec3b46,#b81f33);color:#fff;border:none}
+  .num-card.big .num{color:#fff;font-size:2rem}
+  .step{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}
+  .step:first-child{border-top:none}
+  .step .n{flex:none;width:40px;height:40px;border-radius:12px;background:var(--coral);color:#fff;
+    display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:1.2rem}
+</style>
+</head>
+<body data-screen-label="Code Rouge">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo-paradis.png" alt="Capfun · Le Paradis de Bazas"></a>
+    <div class="nav-links" id="navlinks">
+      <a href="index.html">Accueil</a>
+      <a href="avant-arrivee.html">Avant ton arrivée</a>
+      <a href="le-groupe.html">Le Groupe</a>
+      <a href="le-camping.html">Le Camping</a>
+      <a href="farfarolle.html">Farfarolle</a>
+      <a href="avantages.html">Mes Avantages</a>
+      <a href="les-teams.html">Les Teams</a>
+      <a href="code-rouge.html" class="active">Code Rouge</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html" class="btn btn-outline">← Accueil</a>
+      <button class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head bg-coral">
+  <div class="hero-grain"></div>
+  <div class="wrap">
+    <span class="eyebrow">Rubrique 08 · Sécurité</span>
+    <h1 style="margin-top:14px">Code Rouge 🚨</h1>
+    <p class="lead" style="margin-top:16px">La sécurité est l'affaire de tous. Sois vigilant et agis en conséquence pour un environnement de travail sûr et protégé.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" style="position:absolute;bottom:-1px;left:0"><path fill="#fbf6ef" d="M0,32L120,37.3C240,43,480,53,720,53.3C960,53,1200,43,1320,37.3L1440,32L1440,90L0,90Z"></path></svg>
+</header>
+
+<main>
+  <!-- Numéros -->
+  <section class="section" style="padding-bottom:clamp(20px,3vw,40px)">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="display:inline-flex;color:var(--coral)">Numéros essentiels</span>
+      <div class="grid g-2 reveal" style="margin-top:24px">
+        <div class="num-card big"><div class="lbl">Astreinte / Urgence camping</div><a href="tel:0786850422" class="num">07 86 85 04 22</a></div>
+        <div class="num-card big"><div class="lbl">Accueil camping</div><a href="tel:0556651317" class="num">05 56 65 13 17</a></div>
+      </div>
+      <div class="grid g-4 reveal" style="margin-top:18px">
+        <div class="num-card"><div class="lbl">🚒 Pompiers</div><span class="num">18</span></div>
+        <div class="num-card"><div class="lbl">🚑 SAMU</div><span class="num">15</span></div>
+        <div class="num-card"><div class="lbl">👮 Police</div><span class="num">17</span></div>
+        <div class="num-card"><div class="lbl">🆘 Toutes urgences</div><span class="num">112</span></div>
+      </div>
+      <div class="grid g-3 reveal" style="margin-top:18px">
+        <div class="num-card"><div class="lbl">Gendarmerie de Bazas</div><span class="num" style="font-size:1.2rem">05 56 65 02 05</span></div>
+        <div class="num-card"><div class="lbl">Mairie de Bazas</div><span class="num" style="font-size:1.2rem">05 56 65 06 65</span></div>
+        <div class="num-card"><div class="lbl">Police municipale</div><span class="num" style="font-size:1.2rem">05 56 65 07 19</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Procédures Code Rouge -->
+  <section class="section" style="padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(20px,3vw,40px)">
+    <div class="wrap">
+      <div class="reveal" style="max-width:64ch">
+        <span class="eyebrow" style="display:inline-flex;color:var(--coral)">Les bons réflexes</span>
+        <h2 style="margin-top:10px">Les procédures Code Rouge</h2>
+        <p class="lead" style="margin-top:12px;color:var(--ink-soft)">Connais-les avant la saison. Clique sur une fiche pour l'agrandir et la lire en détail.</p>
+      </div>
+      <div class="grid g-4 reveal" style="margin-top:28px">
+        <figure class="poster" style="margin:0">
+          <div class="poster-media"><img class="zoomable" src="assets/cr-accident.png" alt="Procédure Code Rouge Accident">
+            <span class="zoom-hint">🔍 Agrandir</span></div>
+          <figcaption class="poster-cap"><span class="dot"></span>Accident</figcaption>
+        </figure>
+        <figure class="poster" style="margin:0">
+          <div class="poster-media"><img class="zoomable" src="assets/cr-noyade-avec.png" alt="Procédure Code Rouge Noyade avec surveillant de baignade">
+            <span class="zoom-hint">🔍 Agrandir</span></div>
+          <figcaption class="poster-cap"><span class="dot"></span>Noyade · avec surveillant</figcaption>
+        </figure>
+        <figure class="poster" style="margin:0">
+          <div class="poster-media"><img class="zoomable" src="assets/cr-noyade-sans.png" alt="Procédure Code Rouge Noyade sans surveillant de baignade">
+            <span class="zoom-hint">🔍 Agrandir</span></div>
+          <figcaption class="poster-cap"><span class="dot"></span>Noyade · sans surveillant</figcaption>
+        </figure>
+        <figure class="poster" style="margin:0">
+          <div class="poster-media"><img class="zoomable" src="assets/cr-arret-cardiaque.png" alt="Procédure Code Rouge Arrêt cardiaque">
+            <span class="zoom-hint">🔍 Agrandir</span></div>
+          <figcaption class="poster-cap"><span class="dot"></span>Arrêt cardiaque</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consignes -->
+  <section class="section" style="padding-top:clamp(20px,3vw,40px)">
+    <div class="wrap">
+      <div class="grid g-2 reveal" style="gap:26px;align-items:start">
+        <div class="card" style="padding:clamp(26px,3vw,40px)">
+          <span class="eyebrow">Consignes de sécurité &amp; environnement</span>
+          <h2 style="margin-top:10px">Mes 9 réflexes</h2>
+          <ul class="checklist" style="margin-top:18px">
+            <li>Je fais passer la sécurité des personnes et du matériel avant tout</li>
+            <li>J'applique les procédures et les consignes</li>
+            <li>Je respecte le matériel, les installations et les locaux</li>
+            <li>Je porte ma tenue Capfun et j'utilise les équipements de protection individuelle</li>
+            <li>J'alerte en cas de danger ou de non-conformité</li>
+            <li>Je préviens l'encadrement et je me fais soigner en cas d'accident, même bénin, et je l'inscris au registre</li>
+            <li>J'ai le souci du rangement et de la propreté</li>
+            <li>Je respecte l'environnement et je trie les déchets</li>
+            <li>J'applique et je fais appliquer ces consignes</li>
+          </ul>
+        </div>
+
+        <!-- Guide donneur d'alerte -->
+        <div class="card" style="padding:clamp(26px,3vw,40px);background:linear-gradient(160deg,#fff,#fff5f5)">
+          <span class="eyebrow" style="color:var(--coral)">Guide du donneur d'alerte</span>
+          <h2 style="margin-top:10px">En cas d'accident</h2>
+          <div style="margin-top:14px">
+            <div class="step"><span class="n">1</span><div><strong>Identifie-toi</strong> — donne ton NOM et le numéro de téléphone d'où tu appelles.</div></div>
+            <div class="step"><span class="n">2</span><div><strong>Donne l'adresse précise</strong> — Camping Capfun Paradis de Bazas, 285 Chemin de Migot, 33430 Bazas.</div></div>
+            <div class="step"><span class="n">3</span><div><strong>Précise la nature</strong> de l'accident (circulation, malaise, domestique…). Décris précisément.</div></div>
+            <div class="step"><span class="n">4</span><div><strong>Décris ce que tu as vu</strong> — nombre de victimes, sexe/âge, état (parle, saigne, respire), position, gestes effectués.</div></div>
+            <div class="step"><span class="n">5</span><div><strong>Signale les risques persistants</strong> — effondrement, incendie, explosion, collision.</div></div>
+            <div class="step"><span class="n">6</span><div><strong>Ne raccroche pas</strong> — attends les instructions et un avis médical.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Équipement de sécurité -->
+      <div class="reveal" style="margin-top:46px">
+        <span class="eyebrow" style="display:inline-flex;color:var(--coral)">Sur le terrain</span>
+        <h2 style="margin-top:10px">L'équipement de sécurité</h2>
+        <p class="lead" style="margin-top:12px;color:var(--ink-soft);max-width:60ch">Mégaphones, sifflets, gilets et plan d'évacuation, extincteurs, trousses de secours, défibrillateur, voiturettes et talkies — répartis par zone. Minimum 2 personnes par zone.</p>
+        <figure class="poster" style="margin:22px 0 0;max-width:760px">
+          <div class="poster-media wide"><img class="zoomable" src="assets/cr-equipement.png" alt="Équipement de sécurité du Paradis de Bazas">
+            <span class="zoom-hint">🔍 Agrandir</span></div>
+        </figure>
+      </div>
+
+      <!-- Plans d'évacuation -->
+      <div class="reveal" style="margin-top:46px">
+        <span class="eyebrow" style="display:inline-flex;color:var(--coral)">🏃 En cas d'évacuation</span>
+        <h2 style="margin-top:10px">Les plans d'évacuation</h2>
+        <p class="lead" style="margin-top:12px;color:var(--ink-soft);max-width:64ch">Toujours partir du point le plus éloigné pour se diriger progressivement vers la zone de rassemblement, en suivant le sens d'évacuation. Le plan varie selon la saison et le moment de la journée.</p>
+
+        <div class="tabs" role="tablist">
+          <button class="tab-btn active" data-tab="plan1">Basse saison</button>
+          <button class="tab-btn" data-tab="plan2">Haute saison · Jour</button>
+          <button class="tab-btn" data-tab="plan3">Haute saison · Nuit</button>
+        </div>
+        <div class="tab-panel active" id="plan1">
+          <figure class="poster" style="margin:0">
+            <div class="poster-media wide"><img class="zoomable" src="assets/plan-basse-saison.png" alt="Plan d'évacuation — Basse saison">
+              <span class="zoom-hint">🔍 Agrandir</span></div>
+            <figcaption class="poster-cap"><span class="dot"></span>Plan — Basse saison</figcaption>
+          </figure>
+        </div>
+        <div class="tab-panel" id="plan2">
+          <figure class="poster" style="margin:0">
+            <div class="poster-media wide"><img class="zoomable" src="assets/plan-haute-jour.png" alt="Plan d'évacuation — Haute saison Jour">
+              <span class="zoom-hint">🔍 Agrandir</span></div>
+            <figcaption class="poster-cap"><span class="dot"></span>Plan — Haute saison · Jour</figcaption>
+          </figure>
+        </div>
+        <div class="tab-panel" id="plan3">
+          <figure class="poster" style="margin:0">
+            <div class="poster-media wide"><img class="zoomable" src="assets/plan-haute-nuit.png" alt="Plan d'évacuation — Haute saison Nuit">
+              <span class="zoom-hint">🔍 Agrandir</span></div>
+            <figcaption class="poster-cap"><span class="dot"></span>Plan — Haute saison · Nuit</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ SUIVANT ============ -->
+<section class="next-nav">
+  <div class="wrap">
+    <a class="next-card reveal" href="index.html">
+      <div>
+        <span class="next-label">Pour finir</span>
+        <span class="next-title">Retour à l'accueil</span>
+      </div>
+      <span class="next-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="brand-logo" src="assets/logo-paradis.png" alt="Capfun · Le Paradis de Bazas">
+        <p style="margin-top:14px;color:#cabbf0">285 Chemin de Migot<br>33430 Bazas · Gironde</p>
+      </div>
+      <div><h4>L'essentiel</h4><div class="stack-sm" style="display:grid">
+        <a href="avant-arrivee.html">Avant ton arrivée</a><a href="le-camping.html">Le Camping</a><a href="travailler.html">Travailler ici</a><a href="les-teams.html">Les Teams</a>
+      </div></div>
+      <div><h4>Découvrir</h4><div class="stack-sm" style="display:grid">
+        <a href="le-groupe.html">Le Groupe</a><a href="farfarolle.html">Le Monde de Farfarolle</a><a href="avantages.html">Mes Avantages</a><a href="code-rouge.html">Code Rouge</a>
+      </div></div>
+      <div><h4>En cas d'urgence</h4>
+        <div class="emergency"><span>🚨</span><div>Astreinte camping<br><span class="num">07 86 85 04 22</span></div></div>
+        <p style="margin-top:12px;font-size:.85rem">Pompiers 18 · SAMU 15 · Police 17 · Urgences 112</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Capfun · Le Paradis de Bazas — Espace Saisonnier</span><span>Cap sur le Fun ! 🚀</span></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  document.querySelectorAll('.tab-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var id=btn.getAttribute('data-tab');
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b===btn);});
+      document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.toggle('active',p.id===id);});
+    });
+  });
+</script>
+</body>
+</html>
