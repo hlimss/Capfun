@@ -291,26 +291,33 @@ p{margin:0 0 1rem;text-wrap:pretty}
 .tab-panel{display:none;margin-top:22px}
 .tab-panel.active{display:block;animation:lbfade .25s ease}
 
-/* ---------- next-page nav band ---------- */
+/* ---------- prev / next page nav band ---------- */
 .next-nav{padding:0 0 clamp(40px,5vw,64px)}
-.next-nav .wrap{display:flex;justify-content:flex-end}
-.next-card{display:inline-flex;align-items:center;gap:16px;
+.next-nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.next-nav .nav-spacer{flex:1}
+.next-card,.prev-card{display:inline-flex;align-items:center;gap:16px;
   background:#fff;color:var(--ink);text-decoration:none;
   border:2px solid var(--line);border-radius:999px;
-  padding:10px 12px 10px 24px;box-shadow:var(--shadow-sm);
+  padding:10px 12px;box-shadow:var(--shadow-sm);
   transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.next-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:transparent}
-.next-card .next-label{display:block;font-family:var(--font-display);font-weight:600;font-size:.66rem;
+.next-card{padding-left:24px}
+.prev-card{padding-right:24px}
+.next-card:hover,.prev-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:transparent}
+.next-card .next-label,.prev-card .next-label{display:block;font-family:var(--font-display);font-weight:600;font-size:.66rem;
   letter-spacing:.16em;text-transform:uppercase;color:var(--magenta);line-height:1}
-.next-card .next-title{display:block;font-family:var(--font-display);font-weight:600;
+.prev-card{text-align:left}
+.next-card{text-align:right}
+.next-card .next-title,.prev-card .next-title{display:block;font-family:var(--font-display);font-weight:600;
   font-size:1.1rem;margin-top:3px;color:var(--ink);line-height:1.05}
-.next-card .next-arrow{flex:none;width:44px;height:44px;border-radius:50%;
+.next-card .next-arrow,.prev-card .next-arrow{flex:none;width:44px;height:44px;border-radius:50%;
   background:var(--yellow);color:var(--purple-ink);display:grid;place-items:center;
-  font-size:1.25rem;font-weight:700;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+  font-size:1.25rem;font-weight:700;transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .2s,color .2s}
 .next-card:hover .next-arrow{transform:translateX(4px) rotate(8deg);background:var(--magenta);color:#fff}
+.prev-card:hover .next-arrow{transform:translateX(-4px) rotate(-8deg);background:var(--magenta);color:#fff}
 @media(max-width:560px){
-  .next-nav .wrap{justify-content:stretch}
-  .next-card{width:100%;justify-content:space-between}
+  .next-nav .wrap{flex-direction:column-reverse;align-items:stretch}
+  .next-nav .nav-spacer{display:none}
+  .next-card,.prev-card{width:100%;justify-content:space-between}
 }
 
 /* utility */
@@ -340,17 +347,11 @@ p{margin:0 0 1rem;text-wrap:pretty}
   display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow)}
 .photo-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .photo-band::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(
-    155deg,
-    rgba(90,44,214,.18) 0%,
-    rgba(58,22,156,.60) 42%,
-    rgba(192,24,107,.94) 100%
-  )}
+  background:linear-gradient(155deg,rgba(90,44,214,.18) 0%,rgba(58,22,156,.60) 42%,rgba(192,24,107,.94) 100%)}
 .photo-band .photo-band-body{position:relative;z-index:2;padding:clamp(24px,4vw,40px)}
 .photo-band .photo-band-body h2,.photo-band .photo-band-body h3{color:#fff}
 .photo-band .photo-band-body .eyebrow{color:var(--yellow) !important}
-.photo-band .photo-band-body p{color:rgba(255,255,255,.95)}
-.photo-band .photo-band-body .lead{color:rgba(255,255,255,.95)}
+.photo-band .photo-band-body p,.photo-band .photo-band-body .lead{color:rgba(255,255,255,.95)}
 
 @media(prefers-reduced-motion:no-preference){
   [data-deck-active]{}
@@ -359,131 +360,48 @@ p{margin:0 0 1rem;text-wrap:pretty}
 /* ============================================================
    RESPONSIVE — Mobile & Tablette
    ============================================================ */
-
-/* ---------- Tablette intermédiaire (≤ 820px) ---------- */
 @media(max-width:820px){
-  /* Stack les cartes split inline (balkos, checklist, credo, directeurs) */
-  [style*="grid-template-columns:.85fr"],
-  [style*="grid-template-columns:auto 1fr"]{
-    grid-template-columns:1fr !important;
-  }
-  /* Balkos photo: hauteur fixe quand empilé */
-  .card [style*="min-height:380px"],
-  .card [style*="min-height:260px"]{
-    min-height:240px !important;
-  }
-  /* Section marques : 2 colonnes au lieu de 4 */
-  .g-4.brand-grid{grid-template-columns:repeat(2,1fr) !important}
-  /* Photo-band */
+  [style*="grid-template-columns:.85fr"],[style*="grid-template-columns:auto 1fr"]{grid-template-columns:1fr !important}
+  .card [style*="min-height:380px"],.card [style*="min-height:260px"]{min-height:240px !important}
   .photo-band{min-height:260px}
 }
-
-/* ---------- Mobile (≤ 640px) ---------- */
 @media(max-width:640px){
-
-  /* === Typographie === */
   .lead{font-size:1rem}
   h1{font-size:clamp(2rem,8vw,2.8rem)}
   h2{font-size:clamp(1.6rem,6vw,2.2rem)}
   h3{font-size:clamp(1.1rem,4.5vw,1.4rem)}
-
-  /* === Sections === */
   .section{padding:clamp(36px,8vw,60px) 0}
-
-  /* === Nav logo === */
   .brand-logo{height:44px}
-
-  /* === Hero photo === */
-  .hero--photo .wrap{
-    padding-top:clamp(48px,12vw,80px) !important;
-    padding-bottom:clamp(80px,16vw,120px) !important;
-  }
-  /* Boutons hero en colonne */
-  .hero .wrap > div[style*="display:flex"][style*="gap:14px"]{
-    flex-direction:column !important;
-    align-items:flex-start !important;
-  }
-  /* Infos hero en colonne */
-  .hero .wrap > div[style*="display:flex"][style*="gap:26px"]{
-    flex-direction:column !important;
-    gap:10px !important;
-  }
-
-  /* === Cartes split : toutes passent en 1 colonne === */
-  [style*="grid-template-columns:1fr 1fr"],
-  [style*="grid-template-columns:auto 1fr"],
-  [style*="grid-template-columns:.85fr"],
-  [style*="grid-template-columns:1.4fr"]{
-    grid-template-columns:1fr !important;
-  }
-  /* Cartes overflow:hidden split (checklist valise, balkos) */
-  .card[style*="overflow:hidden"]{
-    display:flex !important;
-    flex-direction:column !important;
-  }
-
-  /* === Photo frame carte groupe === */
+  .hero--photo .wrap{padding-top:clamp(48px,12vw,80px) !important;padding-bottom:clamp(80px,16vw,120px) !important}
+  .hero .wrap > div[style*="display:flex"][style*="gap:14px"]{flex-direction:column !important;align-items:flex-start !important}
+  .hero .wrap > div[style*="display:flex"][style*="gap:26px"]{flex-direction:column !important;gap:10px !important}
+  [style*="grid-template-columns:1fr 1fr"],[style*="grid-template-columns:auto 1fr"],[style*="grid-template-columns:.85fr"],[style*="grid-template-columns:1.4fr"]{grid-template-columns:1fr !important}
+  .card[style*="overflow:hidden"]{display:flex !important;flex-direction:column !important}
   .photo-frame[style*="max-width"]{max-width:100% !important}
-
-  /* === Directeurs : photos côte à côte réduites === */
   [style*="width:108px"]{width:80px !important;height:80px !important}
-  [style*="font-size:2.2rem"]{font-size:1.6rem !important}
-
-  /* === Photo-band === */
   .photo-band{min-height:200px;border-radius:var(--r)}
-  .photo-band-body h2{font-size:clamp(1.3rem,5vw,1.8rem) !important}
-
-  /* === Grille avantages teaser (2 colonnes → 1) === */
   .g-2{grid-template-columns:1fr !important}
-
-  /* === Features === */
   .feature{padding:20px 18px}
-
-  /* === Tiles (tuiles d'accueil) === */
   .tile{min-height:150px}
   .tile .ic{font-size:3.5rem}
   .tile h3{font-size:1.25rem !important}
-
-  /* === Chips === */
   .chip{font-size:.82rem;padding:.4em .8em}
-
-  /* === Perk avantages === */
   .perk,.perk.flip{display:flex !important;flex-direction:column !important}
   .perk-media{min-height:200px}
   .perk.flip .perk-media{order:0 !important}
-
-  /* === Poster Code Rouge : 2 colonnes === */
   .g-4{grid-template-columns:repeat(2,1fr) !important}
-  /* Mais pas le plan wide (1 seule image) */
   .poster-media.wide{aspect-ratio:4/3}
-
-  /* === Tabs === */
   .tab-btn{font-size:.85rem;padding:.5em .9em}
-
-  /* === Footer === */
   .footer .brand-logo{height:52px}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
   .footer-grid{gap:24px}
-
-  /* === Page-head (headers intérieurs) === */
   .page-head{padding:clamp(36px,8vw,60px) 0 clamp(54px,10vw,80px)}
-
-  /* === Mission slogan === */
   .mission-slogan{padding:16px}
-
-  /* === Brand cards marques : 1 colonne === */
-  .g-4.reveal[style]{grid-template-columns:repeat(2,1fr) !important}
-
-  /* === Touch targets === */
   .btn{min-height:44px;min-width:44px}
   .tab-btn{min-height:44px}
   .burger{min-height:44px;min-width:44px}
 }
-
-/* ---------- Très petit (≤ 400px) ---------- */
 @media(max-width:400px){
   .mascots-pills{grid-template-columns:1fr !important}
   .g-4{grid-template-columns:1fr !important}
-  .poster-media{aspect-ratio:3/4}
-  .hero .wrap > div[style*="display:flex"]{gap:10px !important}
 }
