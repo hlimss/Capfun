@@ -188,7 +188,7 @@ p{margin:0 0 1rem;text-wrap:pretty}
 .g-3{grid-template-columns:repeat(3,1fr)}
 .g-4{grid-template-columns:repeat(4,1fr)}
 @media(max-width:900px){.g-3,.g-4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
+@media(max-width:700px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
 
 /* section-nav tiles (home) */
 .tile{
