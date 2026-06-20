@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Teams · Espace Saisonnier — Le Paradis de Bazas</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .team{border-radius:var(--r-lg);box-shadow:var(--shadow);background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+  .team-top{padding:26px 28px;color:#fff;display:flex;align-items:center;gap:16px;border-radius:var(--r-lg) var(--r-lg) 0 0}
+  .team-top .em{font-size:2.4rem}
+  .team-top h3{color:#fff;font-size:1.5rem}
+  .team-body{padding:24px 28px;display:flex;flex-direction:column;flex:1}
+  .member{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px dashed var(--line)}
+  .member:first-of-type{border-top:none}
+  .member .av{width:60px;height:60px;border-radius:50%;flex:none;overflow:hidden;
+    display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-weight:700;
+    box-shadow:0 4px 12px rgba(36,26,77,.16);position:relative;cursor:pointer;
+    transition:transform .32s cubic-bezier(.34,1.56,.64,1),box-shadow .32s ease,outline-color .32s ease;
+    outline:0 solid rgba(255,255,255,0);will-change:transform}
+  .member .av img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .32s ease}
+  .member:hover{position:relative;z-index:5}
+  .member .av:hover{transform:scale(1.85) translateY(-8px);z-index:6;
+    box-shadow:0 22px 40px rgba(36,26,77,.32);outline:4px solid #fff}
+  .member .av:hover img{transform:scale(1.06)}
+  @media(prefers-reduced-motion:no-preference){
+    .member .av:hover{animation:av-float 2.4s ease-in-out infinite}
+  }
+  @keyframes av-float{0%,100%{transform:scale(1.85) translateY(-8px)}50%{transform:scale(1.85) translateY(-15px)}}
+  /* featured hero photo for the direction card */
+  .lead-photo{width:130px;height:130px;border-radius:28px;flex:none;overflow:hidden;
+    box-shadow:var(--shadow);position:relative}
+  .lead-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+</style>
+</head>
+<body data-screen-label="Les Teams">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo-paradis.png" alt="Capfun · Le Paradis de Bazas"></a>
+    <div class="nav-links" id="navlinks">
+      <a href="index.html">Accueil</a>
+      <a href="avant-arrivee.html">Avant ton arrivée</a>
+      <a href="le-groupe.html">Le Groupe</a>
+      <a href="le-camping.html">Le Camping</a>
+      <a href="farfarolle.html">Farfarolle</a>
+      <a href="avantages.html">Mes Avantages</a>
+      <a href="les-teams.html" class="active">Les Teams</a>
+      <a href="code-rouge.html">Code Rouge</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html" class="btn btn-outline">← Accueil</a>
+      <button class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head bg-magenta">
+  <div class="hero-grain"></div>
+  <div class="wrap">
+    <span class="eyebrow">Rubrique 07 · L'équipe</span>
+    <h1 style="margin-top:14px">Les Teams 🤝</h1>
+    <p class="lead" style="margin-top:16px">Une grande famille, plusieurs talents&nbsp;! Un camping de folie ne tourne pas tout seul. Derrière chaque sourire de client, il y a une équipe soudée. Découvre les pôles que tu vas intégrer ou côtoyer.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" style="position:absolute;bottom:-1px;left:0"><path fill="#fbf6ef" d="M0,32L120,37.3C240,43,480,53,720,53.3C960,53,1200,43,1320,37.3L1440,32L1440,90L0,90Z"></path></svg>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g-3 reveal">
+
+        <!-- Direction -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#7b3ff0,#3a169c)"><span class="em">🎯</span><h3>Team Direction</h3></div>
+          <div class="team-body">
+            <p style="color:var(--ink-soft)">Piloter le camping d'une main de maître, veiller au bonheur des vacanciers, et surtout chouchouter l'équipe de saisonniers&nbsp;! Là pour te guider, te motiver et veiller à ta saison.</p>
+            <div style="margin-top:auto;padding-top:8px">
+              <div class="member"><div class="av" style="background:var(--purple)"><img src="assets/team-chris.png" alt="Chris"></div><div><strong>Chris</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Directeur opérationnel</span></div></div>
+              <div class="member"><div class="av" style="background:var(--magenta)"><img src="assets/team-mariam.png" alt="Mariam"></div><div><strong>Mariam</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Directrice</span></div></div>
+              <div class="member"><div class="av" style="background:var(--orange)"><img src="assets/team-jessica.png" alt="Jessica"></div><div><strong>Jessica</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Assistante de direction</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Animation -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#ff7a2f,#ec3b46)"><span class="em">🎉</span><h3>Team Animation</h3></div>
+          <div class="team-body">
+            <p style="color:var(--ink-soft)">Mettre le feu au camping, créer des souvenirs inoubliables pour les petits et les grands, et faire danser tout le monde jusqu'au bout de la nuit.</p>
+            <div style="margin-top:auto;padding-top:8px">
+              <div class="member"><div class="av" style="background:var(--orange)"><img src="assets/team-julien.png" alt="Julien"></div><div><strong>Julien</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Responsable animation</span></div></div>
+              <div class="member"><div class="av" style="background:var(--purple)"><img src="assets/team-jeanluc.png" alt="Jean Luc"></div><div><strong>Jean Luc</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Animateur</span></div></div>
+              <div class="member"><div class="av" style="background:var(--coral)"><img src="assets/team-basma.png" alt="Basma"></div><div><strong>Basma</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Community manager</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Réception -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#23b1e6,#1376c4)"><span class="em">🛎️</span><h3>Team Réception</h3></div>
+          <div class="team-body">
+            <div style="margin-top:0;padding-top:0">
+              <div class="member"><div class="av" style="background:var(--cyan)"><img src="assets/team-gwen.png" alt="Gwen"></div><div><strong>Gwen</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Réceptionniste</span></div></div>
+              <div class="member"><div class="av" style="background:var(--blue)"><img src="assets/team-remi.png" alt="Rémi"></div><div><strong>Rémi</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Réceptionniste</span></div></div>
+            </div>
+            <p style="color:var(--ink-soft);margin-top:14px">Être le premier et le dernier visage que les clients voient. Orienter, conseiller, et gérer les arrivées et départs d'une main de maître.</p>
+          </div>
+        </article>
+
+        <!-- Ménage -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#34b24a,#1f8a3a)"><span class="em">🧹</span><h3>Team Ménage</h3></div>
+          <div class="team-body">
+            <div style="margin-top:0;padding-top:0">
+              <div class="member"><div class="av" style="background:var(--magenta)"><img src="assets/team-roze.png" alt="Roze"></div><div><strong>Roze</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Équipière ménage</span></div></div>
+              <div class="member"><div class="av" style="background:var(--green)"><img src="assets/team-kalyssa.png" alt="Kalyssa"></div><div><strong>Kalyssa</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Équipière ménage</span></div></div>
+              <div class="member"><div class="av" style="background:var(--blue)"><img src="assets/team-noah.png" alt="Noah"></div><div><strong>Noah</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Équipier ménage</span></div></div>
+            </div>
+            <p style="color:var(--ink-soft);margin-top:14px">Garantir la propreté irréprochable des hébergements. Sans eux, le camping ne peut tout simplement pas fonctionner&nbsp;!</p>
+          </div>
+        </article>
+
+        <!-- Technique -->
+        <article class="team">
+          <div class="team-top" style="background:linear-gradient(150deg,#2b7fe0,#3a169c)"><span class="em">🔧</span><h3>Team Technique &amp; Espaces Verts</h3></div>
+          <div class="team-body">
+            <p style="color:var(--ink-soft)">Veiller au bon fonctionnement de toutes les infrastructures (électricité, plomberie) et garder le camping magnifique et verdoyant.</p>
+            <div style="margin-top:auto;padding-top:8px">
+              <div class="member"><div class="av" style="background:var(--blue)"><img src="assets/team-remy.png" alt="Remy"></div><div><strong>Remy</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Technique &amp; espaces verts</span></div></div>
+              <div class="member"><div class="av" style="background:var(--coral)"><img src="assets/team-philippe.png" alt="Philippe"></div><div><strong>Philippe</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Technique &amp; espaces verts</span></div></div>
+              <div class="member"><div class="av" style="background:var(--green)"><img src="assets/team-jeremy.png" alt="Jeremy"></div><div><strong>Jeremy</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Technique &amp; espaces verts</span></div></div>
+              <div class="member"><div class="av" style="background:var(--purple)"><img src="assets/team-matheo.png" alt="Mathéo"></div><div><strong>Mathéo</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Technique &amp; espaces verts</span></div></div>
+              <div class="member"><div class="av" style="background:var(--orange)"><img src="assets/team-matthew.png" alt="Matthew"></div><div><strong>Matthew</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Technique &amp; espaces verts</span></div></div>
+              <div class="member"><div class="av" style="background:var(--cyan)"><img src="assets/team-barth.png" alt="Barth"></div><div><strong>Barth</strong><br><span style="color:var(--ink-soft);font-size:.9rem">Technique &amp; espaces verts</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Toi -->
+        <article class="team" style="background:linear-gradient(150deg,#ffc62e,#ff7a2f)">
+          <div class="team-top" style="background:transparent"><span class="em">🫵</span><h3 style="color:var(--purple-ink)">Et toi&nbsp;?</h3></div>
+          <div class="team-body">
+            <p style="color:var(--purple-ink);font-weight:700">Quel que soit ton poste, tu participes directement à la mission Capfun : rendre les vacances de nos clients uniques. Bienvenue dans l'équipe&nbsp;!</p>
+            <div style="margin-top:auto;padding-top:8px">
+              <a href="avantages.html" class="btn btn-primary">Voir mes avantages →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ SUIVANT ============ -->
+<section class="next-nav">
+  <div class="wrap">
+    <a class="prev-card reveal" href="avantages.html">
+      <span class="next-arrow">←</span>
+      <div>
+        <span class="next-label">Page précédente</span>
+        <span class="next-title">Mes Avantages</span>
+      </div>
+    </a>
+    <a class="next-card reveal" href="code-rouge.html">
+      <div>
+        <span class="next-label">Page suivante</span>
+        <span class="next-title">Code Rouge</span>
+      </div>
+      <span class="next-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="brand-logo" src="assets/logo-paradis.png" alt="Capfun · Le Paradis de Bazas">
+        <p style="margin-top:14px;color:#cabbf0">285 Chemin de Migot<br>33430 Bazas · Gironde</p>
+      </div>
+      <div><h4>L'essentiel</h4><div class="stack-sm" style="display:grid">
+        <a href="avant-arrivee.html">Avant ton arrivée</a><a href="le-camping.html">Le Camping</a><a href="travailler.html">Travailler ici</a><a href="les-teams.html">Les Teams</a>
+      </div></div>
+      <div><h4>Découvrir</h4><div class="stack-sm" style="display:grid">
+        <a href="le-groupe.html">Le Groupe</a><a href="farfarolle.html">Le Monde de Farfarolle</a><a href="avantages.html">Mes Avantages</a><a href="code-rouge.html">Code Rouge</a>
+      </div></div>
+      <div><h4>En cas d'urgence</h4>
+        <div class="emergency"><span>🚨</span><div>Astreinte camping<br><span class="num">07 86 85 04 22</span></div></div>
+        <p style="margin-top:12px;font-size:.85rem">Pompiers 18 · SAMU 15 · Police 17 · Urgences 112</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Capfun · Le Paradis de Bazas — Espace Saisonnier</span><span>Cap sur le Fun ! 🚀</span></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
